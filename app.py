@@ -5,9 +5,10 @@ import socketserver
 from http import HTTPStatus
 
 mydb = mysql.connector.connect(
-  host= os.environ['MYSQL_HOST'],
-  user= os.environ['MYSQL_USERNAME'],
-  password= os.environ['MYSQL_PASSWORD']
+  host= os.environ.get('MYSQL_HOST'),
+  port= os.environ.get('MYSQL_PORT'),
+  user= os.environ.get('MYSQL_USERNAME'),
+  password= os.environ.get('MYSQL_PASSWORD')
 )
 
 print(mydb)
